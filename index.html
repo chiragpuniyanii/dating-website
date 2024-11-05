@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Want to Go on a Date?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-image"></div>
+
+    <div class="card show" id="page1">
+        <h1>Do you want to go on a date with me?</h1>
+        <button class="yes" onclick="showFinalPage()">Yes</button>
+        <button class="no" onclick="nextPage('page2')">No</button>
+    </div>
+
+    <div class="card" id="page2">
+        <h1>Think again! Do you want to go with me?</h1>
+        <button class="yes" onclick="showFinalPage()">Yes</button>
+        <button class="no" onclick="nextPage('page3')">No</button>
+    </div>
+
+    <div class="card" id="page3">
+        <h1>Do you want to go with someone more handsome than me?</h1>
+        <button class="yes" onclick="showPage('page6')">Yes</button>
+        <button class="no" onclick="nextPage('page4')">No</button>
+    </div>
+
+    <div class="card" id="page4">
+        <h1>Pretty please, go with me!</h1>
+        <button class="yes" onclick="showFinalPage()">Yes</button>
+        <button class="no moveable" id="noButton" onmouseover="moveNoButton()">No</button>
+    </div>
+
+    <div class="card" id="page5">
+        <h1 id="dateDetails">Hehehe, I knew you loved me!</h1>
+        <p>Haan haan, ab humare sath date pe kahan chalna pasand karoge cuttie? Neeche diye gaye options me se choose karo!</p>
+        <button class="location" onclick="chooseLocation('Beach')">Beach</button>
+        <button class="location" onclick="chooseLocation('Park')">Park</button>
+        <button class="location" onclick="chooseLocation('Restaurant')">Restaurant</button>
+        <button class="location" onclick="chooseLocation('Cinema')">Cinema</button>
+    </div>
+
+    <div class="card" id="page6">
+        <h1>It's not fair! Please go with me for a date! 🥺</h1>
+        <button class="yes" onclick="showFinalPage()">Yes</button>
+        <button class="no" onclick="nextPage('page4')">No</button>
+    </div>
+
+    <div class="card" id="page7">
+        <h1 id="selectedLocation">Great choice! You chose a location. Please provide the date and time for our date, darling!</h1>
+        <form action="submit_date.php" method="post">
+            <div class="calendar">
+                <label for="nameInput">Apka wo pyaara naam, jise sirf hum hi bula sakein❤️:</label>
+                <input type="text" id="nameInput" name="name" placeholder="Your Name" required>
+                
+                <label for="dateInput">Date:</label>
+                <input type="date" id="dateInput" name="date" required>
+                
+                <label for="timeInput">Time:</label>
+                <input type="time" id="timeInput" name="time" required>
+                
+                <input type="hidden" id="locationInput" name="location"> <!-- Hidden field for location -->
+            </div>
+            <button id="submitButton">Submit</button>
+        </form>
+    </div>
+
+    <div class="card" id="page8" style="display: none;">
+        <div id="animationContainer"></div>
+        <h1 id="romanticCaption"></h1>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
