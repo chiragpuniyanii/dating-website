@@ -54,17 +54,22 @@ This project is a dating website hosted on an AWS EC2 instance using Ubuntu. The
 **Install MySQL:**
 
     sudo apt install mysql-server
-    Secure MySQL Installation:
+    
+    ##Secure MySQL Installation:
     
     sudo mysql_secure_installation
-    Follow the prompts to set the root password and configure MySQL securely.
+   
+**Follow the prompts to set the root password and configure MySQL securely.**
     
-    Create MySQL Database and User:
     
-    Log in to MySQL as root:
+    ##Create MySQL Database and User:
+    
+    ##Log in to MySQL as root:
 
     sudo mysql -u root -p
-    Create a new database for your website:
+   
+**Create a new database for your website:**
+    
    sql
    
     CREATE DATABASE dating_app;
@@ -73,27 +78,32 @@ This project is a dating website hosted on an AWS EC2 instance using Ubuntu. The
     GRANT ALL PRIVILEGES ON dating_app.* TO 'appuser'@'localhost';
     FLUSH PRIVILEGES;
     EXIT;
+    
 ### 5. Install phpMyAdmin
 **Install phpMyAdmin:**
 
     sudo apt install phpmyadmin
-    Configure Apache to Work with phpMyAdmin:
     
-    Select Apache2 when prompted for the web server during the phpMyAdmin installation.
-    After installation, create a symlink to phpMyAdmin for Apache:
+  **Configure Apache to Work with phpMyAdmin:**
+    
+    ## Select Apache2 when prompted for the web server during the phpMyAdmin installation.
+    ## After installation, create a symlink to phpMyAdmin for Apache:
   
     sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
-    Restart Apache:
+  
+   **Restart Apache:**
     
     sudo systemctl restart apache2
-    Access phpMyAdmin:
+   
+   **Access phpMyAdmin:**
     Go to http://your-ec2-public-ip/phpmyadmin and log in using the appuser credentials to manage your database.
 
 ### 6. Website Files
 **Create Website Files:**
 
-    Upload your index.html, style.css, script.js, and submit_date.php files to /var/www/html/.
-    Make sure your PHP files are connected to the MySQL database. For example, in submit_date.php, use the following code to connect to the database:
+Upload your index.html, style.css, script.js, and submit_date.php files to /var/www/html/.
+Make sure your PHP files are connected to the MySQL database. For example, in submit_date.php, use the following code to connect to the database:
+    
     php
     
     <?php
@@ -111,9 +121,11 @@ This project is a dating website hosted on an AWS EC2 instance using Ubuntu. The
     }
     echo "Connected successfully";
     ?>
-    Test the Website:
     
-    Open your browser and go to http://your-ec2-public-ip. You should see your dating website.
+    
+**Test the Website:**
+    
+Open your browser and go to http://your-ec2-public-ip. You should see your dating website.
 
 
 ### 7. Instructions for Deployment
@@ -126,9 +138,14 @@ Clone this repository and upload the website files to /var/www/html/.
 Configure the MySQL connection in your PHP files.
 Install phpMyAdmin to manage the database.
 Access the website from your EC2 public IP.
-Screenshots
-Here are some screenshots of the project:
+
+
+### Screenshots
+
+**Here are some screenshots of the project:**
+
 ![image](https://github.com/user-attachments/assets/1975c591-11a2-4d19-9f93-8b7d05939858)
+
 ![image](https://github.com/user-attachments/assets/fc702945-535b-4809-a3e8-24c37afb5acc)
 
 
