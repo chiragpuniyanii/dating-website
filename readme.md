@@ -86,8 +86,8 @@ This project is a dating website hosted on an AWS EC2 instance using Ubuntu. The
     
   **Configure Apache to Work with phpMyAdmin:**
     
-    ## Select Apache2 when prompted for the web server during the phpMyAdmin installation.
-    ## After installation, create a symlink to phpMyAdmin for Apache:
+ ## Select Apache2 when prompted for the web server during the phpMyAdmin installation.
+ ## After installation, create a symlink to phpMyAdmin for Apache:
   
     sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
   
