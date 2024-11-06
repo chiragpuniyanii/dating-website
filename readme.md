@@ -46,7 +46,7 @@ This project is a dating website hosted on an AWS EC2 instance using Ubuntu. The
 **Install PHP and Required Extensions:**
   
     sudo apt install php libapache2-mod-php php-mysql
-    Restart Apache:
+##Restart Apache:
     
     sudo systemctl restart apache2
 
@@ -55,16 +55,16 @@ This project is a dating website hosted on an AWS EC2 instance using Ubuntu. The
 
     sudo apt install mysql-server
     
-    ##Secure MySQL Installation:
+ ##Secure MySQL Installation:
     
     sudo mysql_secure_installation
    
 **Follow the prompts to set the root password and configure MySQL securely.**
     
     
-    ##Create MySQL Database and User:
+##Create MySQL Database and User:
     
-    ##Log in to MySQL as root:
+##Log in to MySQL as root:
 
     sudo mysql -u root -p
    
@@ -104,7 +104,7 @@ This project is a dating website hosted on an AWS EC2 instance using Ubuntu. The
 Upload your index.html, style.css, script.js, and submit_date.php files to /var/www/html/.
 Make sure your PHP files are connected to the MySQL database. For example, in submit_date.php, use the following code to connect to the database:
     
-    php
+   php
     
     <?php
     $servername = "localhost";
